@@ -1,0 +1,11 @@
+@import "./constants.scss";
+
+@mixin neon-pink {
+  color: $light-pink;
+  filter: drop-shadow(0px 0px 5px $pink);
+}
+
+@mixin neon-cyan {
+  color: $light-cyan;
+  filter: drop-shadow(0px 0px 5px $cyan);
+}
