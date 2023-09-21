@@ -1,0 +1,17 @@
+.status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+
+  &__text {
+    color: $white;
+    font-size: 35px;
+    font-weight: 500;
+    text-shadow: 0px 0px 10px $black;
+  }
+  &__icon {
+    font-size: 35px;
+    margin: 3px 0 0 5px;
+  }
+}

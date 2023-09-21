@@ -13,11 +13,11 @@ export function calculateWinner(cells) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (
-      cells[a] &&
+      cells[a]?.name &&
       cells[a]?.name === cells[b]?.name &&
       cells[a]?.name === cells[c]?.name
     ) {
-      return cells[a].name;
+      return cells[a];
     }
   }
   return false;

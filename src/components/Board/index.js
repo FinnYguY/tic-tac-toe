@@ -1,53 +1,37 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import Cell from "../Cell";
 import { calculateWinner } from "../../constants/functions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectWinnerName,
+  selectXIsNext,
+  setWinnerName,
+  setXIsNext,
+} from "../../store/statusSlice";
+import { xmark, checkmark } from "../../constants/constants";
 
 export default function Board() {
-  const xmark = {
-    name: "xmark",
-    icon: (
-      <FontAwesomeIcon
-        className="tic-tac-toe xmark"
-        icon={icon({ name: "xmark" })}
-      />
-    ),
-  };
-  const checkmark = {
-    name: "checkmark",
-    icon: (
-      <FontAwesomeIcon
-        className="tic-tac-toe checkmark"
-        icon={icon({ name: "check", style: "solid" })}
-      />
-    ),
-  };
-
   const [cells, setCells] = useState(Array(9).fill({ name: "", icon: "" }));
-  const [xIsNext, setXIsNext] = useState(true);
-  // const [status, setStatus] = useState("");
+  const winnerName = useSelector(selectWinnerName);
+  const xIsNext = useSelector(selectXIsNext);
+  const dispatch = useDispatch();
 
   function handleClick(i) {
-    if (calculateWinner(cells) || cells[i].icon) {
+    if (cells[i].name || winnerName) {
       return;
     }
     const nextCells = cells.slice();
     xIsNext ? (nextCells[i] = xmark) : (nextCells[i] = checkmark);
     setCells(nextCells);
-    setXIsNext(!xIsNext);
+    dispatch(setXIsNext(!xIsNext));
+    if (calculateWinner(nextCells)) {
+      dispatch(setWinnerName(calculateWinner(nextCells).name));
+    }
   }
-
-  const winner = calculateWinner(cells);
-  let status = "";
-  winner
-    ? (status = `Winner: ${winner}`)
-    : (status = `Current move: ${xIsNext ? xmark.name : checkmark.name}`);
 
   return (
     <>
-      <div style={{ color: "white" }}>{status}</div>
       <div className="board">
         <div className="board__row">
           <Cell value={cells[0]} onCellClick={() => handleClick(0)} />
