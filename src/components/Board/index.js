@@ -10,6 +10,7 @@ import {
   setXIsNext,
 } from "../../store/statusSlice";
 import { xmark, checkmark } from "../../constants/constants";
+import { setCurrentTheme } from "../../store/themeSlice";
 
 export default function Board() {
   const [cells, setCells] = useState(Array(9).fill({ name: "", icon: "" }));
@@ -32,7 +33,7 @@ export default function Board() {
 
   return (
     <>
-      <div className="board">
+      <div className="board display-slowly">
         <div className="board__row">
           <Cell value={cells[0]} onCellClick={() => handleClick(0)} />
           <Cell value={cells[1]} onCellClick={() => handleClick(1)} />

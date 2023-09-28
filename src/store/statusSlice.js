@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { statusActionTypes } from "../constants/statusActionTypes";
 
 export const statusSlice = createSlice({
   name: "status",

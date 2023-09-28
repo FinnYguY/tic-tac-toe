@@ -22,7 +22,7 @@ export default function StatusField() {
   }, [winnerName, xIsNext]);
 
   return (
-    <div className="status">
+    <div className="status display-slowly">
       <div className="status__text">{status}</div>{" "}
       <div className="status__icon">{statusIcon}</div>
     </div>

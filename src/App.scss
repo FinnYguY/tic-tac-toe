@@ -9,7 +9,6 @@
   font-family: "Tektur", cursive;
   outline: none;
   user-select: none;
-  // color: $white;
 }
 
 .wrapper {
@@ -19,5 +18,25 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: center / cover no-repeat url(../background.jpg);
+
+  &--neon {
+    background: center / cover no-repeat url(../backgrounds/bg-neon.jpg);
+  }
+
+  &--forest {
+    background: center / cover no-repeat url(../backgrounds/bg-forest.jpg);
+  }
+}
+
+.display-slowly {
+  animation: display-slowly 300ms linear forwards;
+}
+
+@keyframes display-slowly {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
