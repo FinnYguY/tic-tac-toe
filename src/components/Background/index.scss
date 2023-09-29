@@ -1,0 +1,15 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &--neon {
+    background: center / cover no-repeat url(../../../backgrounds/bg-neon.jpg);
+  }
+
+  &--forest {
+    background: center / cover no-repeat url(../../../backgrounds/bg-forest.jpg);
+  }
+}

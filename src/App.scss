@@ -2,6 +2,7 @@
 @import "./constants/mixins.scss";
 @import "./components/Board/index.scss";
 @import "./components/StatusField/index.scss";
+@import "./components/Background/index.scss";
 
 * {
   margin: 0;
@@ -18,14 +19,6 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-
-  &--neon {
-    background: center / cover no-repeat url(../backgrounds/bg-neon.jpg);
-  }
-
-  &--forest {
-    background: center / cover no-repeat url(../backgrounds/bg-forest.jpg);
-  }
 }
 
 .display-slowly {
