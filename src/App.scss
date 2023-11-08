@@ -3,6 +3,7 @@
 @import "./components/Board/index.scss";
 @import "./components/StatusField/index.scss";
 @import "./components/Background/index.scss";
+@import "./components/Loader/index.scss";
 
 * {
   margin: 0;
@@ -31,5 +32,22 @@
   }
   100% {
     opacity: 100%;
+  }
+}
+
+.hide-slowly {
+  animation: hide-slowly 2000ms linear forwards;
+}
+
+@keyframes hide-slowly {
+  0% {
+    opacity: 100%;
+  }
+  99% {
+    opacity: 0%;
+  }
+  100% {
+    display: none;
+    opacity: 0%;
   }
 }

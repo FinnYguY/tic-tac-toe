@@ -4,12 +4,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
 
   &--neon {
-    background: center / cover no-repeat url(../../../backgrounds/bg-neon.jpg);
+    background: center / cover no-repeat
+      url(../../../public/backgrounds/bg-neon.jpg);
   }
 
   &--forest {
-    background: center / cover no-repeat url(../../../backgrounds/bg-forest.jpg);
+    background: center / cover no-repeat
+      url(../../../public/backgrounds/bg-forest.jpg);
   }
 }
