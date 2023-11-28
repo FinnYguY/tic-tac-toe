@@ -13,7 +13,7 @@ export default function Loader({ isVisible }) {
       <ThreeCircles
         height="120"
         width="120"
-        color="#ffffff"
+        color="#000000"
         visible={true}
         ariaLabel="three-circles-rotating"
         outerCircleColor=""
