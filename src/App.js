@@ -3,7 +3,7 @@ import Board from "./components/Board";
 import StatusField from "./components/StatusField";
 import Background from "./components/Background";
 import Menu from "./components/Menu";
-import Loader from "./components/Loader";
+import LoadingScreen from "./components/LoadingScreen";
 
 import { useSelector } from "react-redux";
 import { selectIsBgLoaded } from "./store/themeSlice";
@@ -14,11 +14,11 @@ export default function App() {
 
   return (
     <div className="wrapper">
-      <Loader isVisible={!isBgLoaded} />
+      <LoadingScreen isVisible={!isBgLoaded} />
       <Background />
       <StatusField />
       <Board />
-      <Menu items={menuItems} position='bottom' />
+      <Menu items={menuItems} position="bottom" />
     </div>
   );
 }

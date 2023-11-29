@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Cell from "../Cell";
 import { calculateWinner } from "../../constants/functions";
@@ -10,13 +10,13 @@ import {
   setXIsNext,
 } from "../../store/statusSlice";
 import { xmark, checkmark } from "../../constants/constants";
-import { setCurrentTheme } from "../../store/themeSlice";
 
 export default function Board() {
   const [cells, setCells] = useState(Array(9).fill({ name: "", icon: "" }));
   const winnerName = useSelector(selectWinnerName);
   const xIsNext = useSelector(selectXIsNext);
   const dispatch = useDispatch();
+  let boardClassNames = {};
 
   function handleClick(i) {
     if (cells[i].name || winnerName) {
