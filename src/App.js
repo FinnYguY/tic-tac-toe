@@ -7,7 +7,7 @@ import LoadingScreen from "./components/LoadingScreen";
 
 import { useSelector } from "react-redux";
 import { selectIsBgLoaded } from "./store/themeSlice";
-import { menuItems } from "./constants/constants";
+import { themeMenuItems } from "./constants/constants";
 
 export default function App() {
   const isBgLoaded = useSelector(selectIsBgLoaded);
@@ -18,7 +18,7 @@ export default function App() {
       <Background />
       <StatusField />
       <Board />
-      <Menu items={menuItems} position="bottom" />
+      <Menu items={themeMenuItems} position="bottom" />
     </div>
   );
 }

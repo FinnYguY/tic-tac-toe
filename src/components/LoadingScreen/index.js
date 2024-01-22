@@ -24,13 +24,9 @@ export default function LoadingScreen({ isVisible }) {
   return (
     <div
       className={loadingScreenClassNames}
-      style={
-        loadingScreenImg
-          ? {
-              background: `center / cover no-repeat url(${loadingScreenImg})`,
-            }
-          : { "background-color": "$white" }
-      }
+      style={{
+        background: `center / cover no-repeat url(${loadingScreenImg})`,
+      }}
     >
       <div className="loading-screen__blur-panel"></div>
       <div className="loading-screen__spinner">

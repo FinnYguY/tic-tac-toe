@@ -1,12 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { useSetTheme } from "./functions";
 
-export const menuItems = [
+export const themeMenuItems = [
   {
     id: 1,
     title: "Forest theme",
+    themeName: "forest",
     icon: <FontAwesomeIcon icon={solid("mountain-sun")} />,
-    action: () => console.log("menu action ok"),
+  },
+  {
+    id: 2,
+    title: "Neon theme",
+    themeName: "neon",
+    icon: <FontAwesomeIcon icon={solid("n")} />,
   },
 ];
 
